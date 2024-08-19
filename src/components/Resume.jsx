@@ -1,7 +1,15 @@
-export default function Resume() {
+import Banner from "./resume-components/Banner";
+import '../styles/resume.css'
+
+export default function Resume({ info }) {
   return (
     <div className="resume">
-      hello res
+      <div className="page">
+      <Banner>
+        <p>{info.personal.name}</p>
+      </Banner>
+
+      </div>
     </div>
   );
 }

@@ -1,0 +1,13 @@
+.page {
+  background-color: #fff;
+  aspect-ratio: 1 / 1.41421356237;
+  box-shadow: 2px 2px 5px 1px #ddd;
+  padding: 1rem;
+}
+.banner {
+  margin-inline: -1rem;
+  padding-block: 5%;
+  color: #fff;
+  background-color: rgb(25, 70, 135);
+  text-align: center;
+}

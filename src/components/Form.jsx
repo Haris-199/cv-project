@@ -1,17 +1,6 @@
-import { useState } from "react";
 import "../styles/form.css";
 
-export default function Form() {
-  const [info, setInfo] = useState({
-    personal: {
-      name: "",
-      email: "",
-      number: "",
-    },
-    education: [],
-    experience: [],
-  });
-
+export default function Form({ info , handleChange}) {
   function cloneInfo() {
     const newObj = { ...info };
     newObj.personal = { ...info.personal };
@@ -32,7 +21,7 @@ export default function Form() {
             onChange={(e) => {
               const newObj = cloneInfo();
               newObj.personal.name = e.target.value;
-              setInfo(newObj);
+              handleChange(newObj);
             }}
           />
 
@@ -45,7 +34,7 @@ export default function Form() {
             onChange={(e) => {
               const newObj = cloneInfo();
               newObj.personal.email = e.target.value;
-              setInfo(newObj);
+              handleChange(newObj);
             }}
           />
 
@@ -58,7 +47,7 @@ export default function Form() {
             onChange={(e) => {
               const newObj = cloneInfo();
               newObj.personal.number = e.target.value;
-              setInfo(newObj);
+              handleChange(newObj);
             }}
           />
         </div>
