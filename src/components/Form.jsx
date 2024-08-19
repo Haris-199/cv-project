@@ -1,12 +1,22 @@
 import { useState } from "react";
 import "../styles/form.css";
 
-export default function Resume() {
-  const [personalInfo, setPersonalInfo] = useState({
-    name: "",
-    email: "",
-    number: "",
+export default function Form() {
+  const [info, setInfo] = useState({
+    personal: {
+      name: "",
+      email: "",
+      number: "",
+    },
+    education: [],
+    experience: [],
   });
+
+  function cloneInfo() {
+    const newObj = { ...info };
+    newObj.personal = { ...info.personal };
+    return newObj;
+  }
 
   return (
     <div className="form">
@@ -18,10 +28,12 @@ export default function Resume() {
             type="text"
             name="name"
             id="name"
-            value={personalInfo.name}
-            onChange={(e) =>
-              setPersonalInfo({ ...personalInfo, name: e.target.value })
-            }
+            value={info.name}
+            onChange={(e) => {
+              const newObj = cloneInfo();
+              newObj.personal.name = e.target.value;
+              setInfo(newObj);
+            }}
           />
 
           <label htmlFor="email">Email</label>
@@ -29,10 +41,12 @@ export default function Resume() {
             type="email"
             name="email"
             id="email"
-            value={personalInfo.email}
-            onChange={(e) =>
-              setPersonalInfo({ ...personalInfo, email: e.target.value })
-            }
+            value={info.email}
+            onChange={(e) => {
+              const newObj = cloneInfo();
+              newObj.personal.email = e.target.value;
+              setInfo(newObj);
+            }}
           />
 
           <label htmlFor="number">Phone Number</label>
@@ -40,10 +54,12 @@ export default function Resume() {
             type="tel"
             name="number"
             id="number"
-            value={personalInfo.number}
-            onChange={(e) =>
-              setPersonalInfo({ ...personalInfo, number: e.target.value })
-            }
+            value={info.number}
+            onChange={(e) => {
+              const newObj = cloneInfo();
+              newObj.personal.number = e.target.value;
+              setInfo(newObj);
+            }}
           />
         </div>
 
