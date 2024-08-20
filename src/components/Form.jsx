@@ -17,7 +17,7 @@ export default function Form({ info , handleChange}) {
             type="text"
             name="name"
             id="name"
-            value={info.name}
+            value={info.personal.name}
             onChange={(e) => {
               const newObj = cloneInfo();
               newObj.personal.name = e.target.value;
@@ -30,7 +30,7 @@ export default function Form({ info , handleChange}) {
             type="email"
             name="email"
             id="email"
-            value={info.email}
+            value={info.personal.email}
             onChange={(e) => {
               const newObj = cloneInfo();
               newObj.personal.email = e.target.value;
@@ -43,7 +43,7 @@ export default function Form({ info , handleChange}) {
             type="tel"
             name="number"
             id="number"
-            value={info.number}
+            value={info.personal.number}
             onChange={(e) => {
               const newObj = cloneInfo();
               newObj.personal.number = e.target.value;

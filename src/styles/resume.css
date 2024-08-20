@@ -4,10 +4,41 @@
   box-shadow: 2px 2px 5px 1px #ddd;
   padding: 1rem;
 }
+
 .banner {
   margin-inline: -1rem;
   padding-block: 5%;
   color: #fff;
   background-color: rgb(25, 70, 135);
   text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.email {
+  position: relative;
+}
+.email::before {
+  position: absolute;
+  width: 17px;
+  content: url("../assets/email-outline.svg");
+  right: calc(100% + 2px);
+  top: 3px;
+}
+
+.number {
+  position: relative;
+}
+.number::before {
+  position: absolute;
+  width: 17px;
+  content: url("../assets/phone.svg");
+  right: calc(100% + 2px);
+  top: 3px;
 }
