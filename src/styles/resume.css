@@ -25,24 +25,29 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  column-gap: 1rem;
+}
+
+.contact > p {
+  margin-top: 0.25rem;
+  display: flex;
+  justify-content: center;
+  text-wrap: nowrap;
 }
 
 .icon {
-  position: relative;
-}
-.icon::before {
-  position: absolute;
-  width: 17px;
-  right: calc(100% + 2px);
-  top: 3px;
+  margin-right: 2px;
+  background-position: center;
+  display: inline-block;
+  width: 21px;
 }
 
-.email-icon::before {
-  content: url("../assets/email-outline.svg");
+.email-icon {
+  background-image: url("../assets/email-outline.svg");
 }
-.number-icon::before {
-  content: url("../assets/phone.svg");
+.number-icon {
+  background-image: url("../assets/phone.svg");
 }
-.address-icon::before {
-  content: url("../assets/map-marker-outline.svg");
+.address-icon {
+  background-image: url("../assets/map-marker-outline.svg");
 }

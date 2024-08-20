@@ -12,6 +12,7 @@ form > div {
 
 input {
   padding: 0.15rem;
+  text-wrap: wrap;
 }
 
 .personal {
