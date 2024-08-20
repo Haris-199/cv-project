@@ -1,3 +1,9 @@
+.resume {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 .page {
   background-color: #fff;
   aspect-ratio: 1 / 1.41421356237;
@@ -11,7 +17,7 @@
   color: #fff;
   background-color: rgb(25, 70, 135);
   text-align: center;
-  font-size: x-large;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -21,24 +27,19 @@
   flex-wrap: wrap;
 }
 
-.email {
+.icon {
   position: relative;
 }
-.email::before {
+.icon::before {
   position: absolute;
   width: 17px;
-  content: url("../assets/email-outline.svg");
   right: calc(100% + 2px);
   top: 3px;
 }
 
-.number {
-  position: relative;
+.email-icon::before {
+  content: url("../assets/email-outline.svg");
 }
-.number::before {
-  position: absolute;
-  width: 17px;
+.number-icon::before {
   content: url("../assets/phone.svg");
-  right: calc(100% + 2px);
-  top: 3px;
 }
