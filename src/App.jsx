@@ -8,6 +8,7 @@ export default function App() {
       name: "",
       email: "",
       number: "",
+      address: "",
     },
     education: [],
     experience: [],

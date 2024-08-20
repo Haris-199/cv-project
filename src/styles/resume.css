@@ -43,3 +43,6 @@
 .number-icon::before {
   content: url("../assets/phone.svg");
 }
+.address-icon::before {
+  content: url("../assets/map-marker-outline.svg");
+}

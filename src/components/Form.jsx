@@ -50,6 +50,18 @@ export default function Form({ info , handleChange}) {
               handleChange(newObj);
             }}
           />
+          <label htmlFor="address">Address</label>
+          <input
+            type="tel"
+            name="address"
+            id="address"
+            value={info.personal.address}
+            onChange={(e) => {
+              const newObj = cloneInfo();
+              newObj.personal.address = e.target.value;
+              handleChange(newObj);
+            }}
+          />
         </div>
 
         <div className="education">
