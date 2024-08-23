@@ -8,15 +8,9 @@ export default function Resume({ info }) {
           <p>{info.personal.name ? info.personal.name : String.fromCharCode(160)}</p>
         </div>
         <div className="contact">
-          <p>
-            {info.personal.email && <><span className="email-icon icon"></span>{info.personal.email}</>}
-          </p>
-          <p>
-            {info.personal.number && <><span className="number-icon icon"></span>{info.personal.number}</>}
-          </p>
-          <p>
-            {info.personal.address && <><span className="address-icon icon"></span>{info.personal.address}</>}
-          </p>
+            {info.personal.email && <p><span className="email-icon icon"></span>{info.personal.email}</p>}
+            {info.personal.number && <p><span className="number-icon icon"></span>{info.personal.number}</p>}
+            {info.personal.address && <p><span className="address-icon icon"></span>{info.personal.address}</p>}
         </div>
       </div>
     </div>
