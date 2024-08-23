@@ -1,10 +1,7 @@
-function handleClick(e) {
-  console.log(e);
-}
 
-export default function SaveButton() {
+export default function SaveButton({ onClick }) {
   return (
-    <button type="button" className="save" onClick={handleClick}>
+    <button type="button" className="save" onClick={onClick}>
       Save
     </button>
   );

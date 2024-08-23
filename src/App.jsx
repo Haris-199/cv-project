@@ -10,15 +10,7 @@ export default function App() {
       number: "",
       address: "",
     },
-    education: [
-      {
-        school: "",
-        degree: "",
-        location: "",
-        start: "",
-        end: "",
-      },
-    ],
+    education: [],
     experience: [
       {
         title: "",
