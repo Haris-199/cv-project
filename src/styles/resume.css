@@ -21,8 +21,12 @@
   font-weight: bold;
 }
 
+.text-margin {
+  margin-inline: 2rem;
+}
+
 .contact {
-  margin-top: 0.25rem;
+  margin-block: 1rem;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -51,4 +55,19 @@
 }
 .address-icon {
   background-image: url("../assets/map-marker-outline.svg");
+}
+
+.seperator {
+  margin-top: 1rem;
+  border-bottom: 1px solid black;
+}
+
+.edu-item {
+  margin-left: 2rem;
+  margin-block: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  column-gap: 2rem;
+  row-gap: 0.2rem;
 }
