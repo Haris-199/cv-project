@@ -1,4 +1,6 @@
 import "../styles/form.css";
+import CancelButton from './CancelButton';
+import SaveButton from './SaveButton';
 
 export default function Form({ info , handleChange}) {
   function cloneInfo() {
@@ -66,6 +68,23 @@ export default function Form({ info , handleChange}) {
 
         <div className="education">
           <h2>Education</h2>
+          <label htmlFor="school-name">School</label>
+          <input id="school-name" type="text" />
+
+          <label htmlFor="degree">Degree</label>
+          <input id="degree" type="text" />
+
+          <label htmlFor="school-location">Location</label>
+          <input id="school-location" type="text" />
+
+          <label htmlFor="school-start">Start</label>
+          <input id="school-start" type="text" />
+
+          <label htmlFor="school-end">End</label>
+          <input id="school-end" type="text" />
+
+          <CancelButton />
+          <SaveButton />
         </div>
 
         <div className="experience">

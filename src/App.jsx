@@ -10,8 +10,25 @@ export default function App() {
       number: "",
       address: "",
     },
-    education: [],
-    experience: [],
+    education: [
+      {
+        school: "",
+        degree: "",
+        location: "",
+        start: "",
+        end: "",
+      },
+    ],
+    experience: [
+      {
+        title: "",
+        company: "",
+        location: "",
+        start: "",
+        end: "",
+        description: [],
+      },
+    ],
   });
 
   return (

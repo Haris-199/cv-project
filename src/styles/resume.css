@@ -7,7 +7,7 @@
 .page {
   background-color: #fff;
   aspect-ratio: 1 / 1.41421356237;
-  box-shadow: 2px 2px 5px 1px #ddd;
+  box-shadow: 2px 2px 8px 3px #ddd;
   padding: 1rem;
 }
 
