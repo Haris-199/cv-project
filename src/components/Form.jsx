@@ -17,6 +17,7 @@ export default function Form({ info , handleChange}) {
   function cloneInfo() {
     const newObj = { ...info };
     newObj.personal = { ...info.personal };
+    newObj.education = [ ...info.education ];
     return newObj;
   }
 
