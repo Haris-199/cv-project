@@ -29,17 +29,73 @@ input {
   grid-template-columns: 1fr 1fr;
   column-gap: 2rem;
 }
-
+.education button {
+  justify-self: center;
+  width: 5rem;
+  height: 2rem;
+  border-radius: 1rem;
+  font-weight: bold;
+}
+.education button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+.edu-item-preview {
+  grid-column: 1 / -1;
+  padding: 1rem;
+  margin-top: 0.75rem;
+  border-radius: 1.5rem;
+  background-color: #f7f7f7;
+  box-shadow: inset 0px 0px 6px 2px #ddd;
+  
+  display: grid;
+  row-gap: 0.5rem;
+  text-align: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "school location delete" "degree length edit";
+  justify-items: center;
+  align-items: center;
+}
+.del-btn {
+  grid-area: delete;
+}
+.school {
+  grid-area: school;
+}
+.location {
+  grid-area: location;
+}
+.degree {
+  grid-area: degree;
+}
+.length {
+  grid-area: length;
+}
+.edit-btn {
+  grid-area: edit;
+}
+@media (max-width: 600px) {
+  .edu-item-preview {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "school school" "location location" "degree degree" "length length" "delete edit";
+  }
+}
+.education h2 {
+  grid-column: 1 / -1;
+}
 .education label {
   margin-top: 0.75rem;
   margin-bottom: 0.2rem;
 }
-
 .education label,
 .education input {
   grid-column: 1 / -1;
 }
-
+.add-btn {
+  margin-top: 0.75rem;
+  grid-column: 1 / -1;
+  justify-self: center;
+}
 #school-start,
 #school-end,
 label[for="school-start"],
@@ -50,25 +106,13 @@ label[for="school-end"] {
   grid-area: 8 / 2 / 9 / 3;
 }
 
-.cancel,
-.save {
-  margin-top: 1rem;
-  justify-self: center;
-  width: 5rem;
-  height: 2rem;
-  border-radius: 1rem;
-  font-weight: bold;
-}
-.cancel:hover,
-.save:hover {
-  cursor: pointer;
-  opacity: 0.6;
-}
 .cancel {
+  margin-top: 0.75rem;
   background-color: #ffdfdf;
   border: 2px solid red;
 }
 .save {
+  margin-top: 0.75rem;
   background-color: #dfffdf;
   border: 2px solid green;
 }
