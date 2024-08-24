@@ -1,10 +1,6 @@
-function handleClick(e) {
-  console.log(e);
-}
-
-export default function SaveButton() {
+export default function CancelButton({ onClick }) {
   return (
-    <button type="button" className="cancel" onClick={handleClick}>
+    <button type="button" className="cancel" onClick={onClick}>
       Cancel
     </button>
   );

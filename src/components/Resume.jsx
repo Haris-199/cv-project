@@ -19,7 +19,7 @@ export default function Resume({ info }) {
           {info.education.length > 0 && <h2 className="seperator">Education</h2>}
           <div className="education-list">
             {info.education.map((obj) =>
-              <div key={obj.school} className="edu-item">
+              <div key={obj.school + obj.degree} className="edu-item">
                 <p><strong>{obj.school}</strong></p>
                 <p>{obj.location}</p>
                 <p><strong>{obj.degree}</strong></p>

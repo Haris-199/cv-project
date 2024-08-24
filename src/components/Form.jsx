@@ -4,7 +4,7 @@ import SaveButton from "./SaveButton";
 import "../styles/form.css";
 
 export default function Form({ info, handleChange }) {
-  const [showEducationInputs, setShowEducationInputs] = useState(false);
+  const [educationEdit, setEducationEdit] = useState(-1);
 
   const [education, setEducation] = useState({
     school: "",
@@ -80,7 +80,7 @@ export default function Form({ info, handleChange }) {
 
         <div className="education">
           <h2>Education</h2>
-          {showEducationInputs ? (
+          {educationEdit > -1 ? (
             <>
               <label htmlFor="school-name">School</label>
               <input
@@ -137,12 +137,24 @@ export default function Form({ info, handleChange }) {
                 }}
               />
 
-              <CancelButton />
+              <CancelButton
+                onClick={() => {
+                  setEducationEdit(-1);
+                  setEducation({
+                    school: "",
+                    degree: "",
+                    location: "",
+                    start: "",
+                    end: "",
+                  });
+                }}
+              />
               <SaveButton
                 onClick={() => {
                   const newObj = cloneInfo();
-                  newObj.education.push(education);
+                  newObj.education[educationEdit] = { ...education };
                   handleChange(newObj);
+                  setEducationEdit(-1);
                   setEducation({
                     school: "",
                     degree: "",
@@ -156,16 +168,39 @@ export default function Form({ info, handleChange }) {
           ) : (
             <>
               {info.education.map((obj) => (
-                <div key={obj.school} className="edu-item-preview">
-                  <button type="button" className="del-btn">Delete</button>
+                <div key={obj.school + obj.degree} className="edu-item-preview">
+                  <button 
+                    type="button"
+                    className="del-btn"
+                    onClick={() => {
+                      const newObj = cloneInfo();
+                      newObj.education = newObj.education.filter((edu) => edu.school !== obj.school);
+                      handleChange(newObj);
+                    }}
+                  >Delete</button>
                   <p className="school">{obj.school}</p>
                   <p className="location">{obj.location}</p>
                   <p className="degree">{obj.degree}</p>
                   <p className="length">{obj.start}-{obj.end}</p>
                   <button type="button" className="edit-btn">Edit</button>
+                  <button 
+                    type="button"
+                    className="edit-btn"
+                    onClick={() => {
+                      const i = info.education.findIndex(edu => (edu.school + edu.degree) === (obj.school + obj.degree));
+                      setEducation({ ...info.education[i]});
+                      setEducationEdit(i);
+                    }}
+                  >Edit</button>
                 </div>
               ))}
-              <button type="button" className="add-btn">Add</button>
+              <button
+                type="button"
+                className="add-btn"
+                onClick={() => setEducationEdit(info.education.length)}
+              >
+                Add
+              </button>
             </>
           )}
         </div>
