@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CancelButton from "./CancelButton";
 import SaveButton from "./SaveButton";
+import '../styles/experience-tab.css';
 
 export default function ExperienceTab({ info, handleChange }) {
   const [experienceEdit, setExperienceEdit] = useState(-1);
@@ -107,36 +108,37 @@ export default function ExperienceTab({ info, handleChange }) {
           />
 
           <label htmlFor="point">Description</label>
-          <input
-            type="text"
-            name="point"
-            id="point"
-            value={point}
-            onChange={(e) => setPoint(e.target.value)}
-          />
-          <button
-            type="button"
-            onClick={() => {
-              setPoints([...points, point]);
-              setPoint("");
-            }}
-          >
-            Add Point
-          </button>
-          <ul>
-            {points.map((pnt) => (
-              <li key={pnt}>
-                {pnt}
-                <button
-                  type="button"
-                  onClick={() => setPoints(points.filter((p) => p !== pnt))}
-                >
-                  Delete
-                </button>
-              </li>
-            ))}
-          </ul>
-
+          <div className="description-input">
+            <input
+              type="text"
+              name="point"
+              id="point"
+              value={point}
+              onChange={(e) => setPoint(e.target.value)}
+            />
+            <button
+              type="button"
+              onClick={() => {
+                setPoints([...points, point]);
+                setPoint("");
+              }}
+            >
+              Add Point
+            </button>
+            <ul>
+              {points.map((pnt) => (
+                <li key={pnt}>
+                  <p>{pnt}</p>
+                  <button
+                    type="button"
+                    onClick={() => setPoints(points.filter((p) => p !== pnt))}
+                  >
+                    Delete
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
           <CancelButton />
           <SaveButton
             onClick={() => {
@@ -153,7 +155,7 @@ export default function ExperienceTab({ info, handleChange }) {
       ) : (
         <>
           {info.experience.map((obj) => (
-            <div key={obj.title + obj.company} className="edu-item-preview">
+            <div key={obj.title + obj.company} className="exp-item-preview">
               <button
                 type="button"
                 className="del-btn"
@@ -167,10 +169,10 @@ export default function ExperienceTab({ info, handleChange }) {
               >
                 Delete
               </button>
-              <p className="school">{obj.title}</p>
-              <p className="location">{obj.location}</p>
-              <p className="degree">{obj.company}</p>
-              <p className="length">
+              <p className="job-title">{obj.title}</p>
+              <p className="job-location">{obj.location}</p>
+              <p className="company">{obj.company}</p>
+              <p className="job-length">
                 {obj.start}-{obj.end}
               </p>
               <button type="button" className="edit-btn">

@@ -106,11 +106,6 @@ button:hover {
 .education input {
   grid-column: 1 / -1;
 }
-.add-btn {
-  margin-top: 0.75rem;
-  grid-column: 1 / -1;
-  justify-self: center;
-}
 #school-start,
 #school-end,
 label[for="school-start"],
@@ -121,15 +116,8 @@ label[for="school-end"] {
   grid-area: 8 / 2 / 9 / 3;
 }
 
-.experience {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.experience label,
-.experience input {
-  grid-column: 1 / -1;
-}
-.experience label {
+.add-btn {
   margin-top: 0.75rem;
-  margin-bottom: 0.2rem;
+  grid-column: 1 / -1;
+  justify-self: center;
 }

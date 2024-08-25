@@ -1,0 +1,79 @@
+.exp-item-preview {
+  grid-column: 1 / -1;
+  padding: 1rem;
+  margin-top: 0.75rem;
+  border-radius: 1.5rem;
+  background-color: #f7f7f7;
+  box-shadow: inset 0px 0px 6px 2px #ddd;
+  
+  display: grid;
+  row-gap: 0.5rem;
+  text-align: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "title location delete" "company length edit";
+  justify-items: center;
+  align-items: center;
+}
+.del-btn {
+  grid-area: delete;
+}
+.job-title {
+  grid-area: title;
+}
+.job-location {
+  grid-area: location;
+}
+.company {
+  grid-area: company;
+}
+.job-length {
+  grid-area: length;
+}
+.edit-btn {
+  grid-area: edit;
+}
+@media (max-width: 600px) {
+  .exp-item-preview {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "school school" "location location" "degree degree" "length length" "delete edit";
+  }
+}
+
+.experience {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.experience label,
+.experience input {
+  grid-column: 1 / -1;
+}
+.experience label {
+  margin-top: 0.75rem;
+  margin-bottom: 0.2rem;
+}
+
+.description-input {
+  grid-column: 1 / -1;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+
+}
+.description-input input {
+  grid-column: span 1;
+}
+
+.experience ul {
+  grid-column: 1 / -1;
+  display: grid;
+  row-gap: 0.5rem;
+}
+
+.experience li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
