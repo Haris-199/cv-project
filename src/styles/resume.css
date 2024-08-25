@@ -71,3 +71,19 @@
   column-gap: 2rem;
   row-gap: 0.2rem;
 }
+
+.exp-item {
+  margin-left: 2rem;
+  margin-block: 1rem;
+  display: grid;
+  row-gap: 0.2rem;
+}
+
+.exp-item > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.exp-item  li { 
+  margin-left: 2rem;
+}

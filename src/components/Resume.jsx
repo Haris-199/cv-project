@@ -27,6 +27,26 @@ export default function Resume({ info }) {
               </div>
             )}
           </div>
+
+          {info.experience.length > 0 && <h2 className="seperator">Experience</h2>}
+          <div className="experience-list">
+            {info.experience.map((obj) =>
+              <div key={obj.title + obj.company} className="exp-item">
+                <p><strong>{obj.title}</strong></p>
+                <div>
+                  <p>{obj.company} - {obj.location}</p>
+                  <p>{obj.start}-{obj.end}</p>
+                </div>
+                <ul>
+                  {obj.description.map((pnt) => (
+                    <li key={pnt}>
+                      {pnt}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

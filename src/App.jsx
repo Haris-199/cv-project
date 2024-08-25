@@ -18,7 +18,7 @@ export default function App() {
         location: "Gotham City",
         start: "1900",
         end: "1801",
-        description: ["Saved people.", "Helped people."],
+        description: ["Saved people.", "Helped peoples."],
       },
       {
         title: "Spiderman",
@@ -26,7 +26,7 @@ export default function App() {
         location: "New York City",
         start: "2020",
         end: "2021",
-        description: ["Did a lot of cool hardwork such as saving people.", "Did stuff."],
+        description: ["Did a lot of cool hardwork such as saving people.", "Did stuff adjsksajlk kasjdlkasjdlk saouyd asudh  sajdh askj fehua hsdkhas kjd.", "Haris is cool."],
       },
     ],
   });
