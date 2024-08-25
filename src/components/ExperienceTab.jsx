@@ -139,7 +139,19 @@ export default function ExperienceTab({ info, handleChange }) {
               ))}
             </ul>
           </div>
-          <CancelButton />
+          <CancelButton onClick={() => {
+            setExperienceEdit(-1);
+            setExperience({
+              title: "",
+              company: "",
+              location: "",
+              start: "",
+              end: "",
+              description: [],
+            });
+            setPoints([]);
+            setPoint("");
+          }}/>
           <SaveButton
             onClick={() => {
               const newObj = cloneInfo();
