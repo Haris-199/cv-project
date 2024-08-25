@@ -143,7 +143,7 @@ export default function ExperienceTab({ info, handleChange }) {
               const newObj = cloneInfo();
               newObj.experience[experienceEdit] = {
                 ...experience,
-                description: [...experience.description],
+                description: [...points],
               };
               handleChange(newObj);
               setExperienceEdit(-1);
