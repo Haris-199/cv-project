@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CancelButton from "./CancelButton";
 import SaveButton from "./SaveButton";
+import ExperienceTab from "./ExperienceTab";
 import "../styles/form.css";
 
 export default function Form({ info, handleChange }) {
@@ -205,9 +206,7 @@ export default function Form({ info, handleChange }) {
           )}
         </div>
 
-        <div className="experience">
-          <h2>Experience</h2>
-        </div>
+        <ExperienceTab info={info} handleChange={handleChange}/>
       </form>
     </div>
   );
