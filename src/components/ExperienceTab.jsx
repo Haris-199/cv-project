@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CancelButton from "./CancelButton";
 import SaveButton from "./SaveButton";
-import '../styles/experience-tab.css';
+import "../styles/experience-tab.css";
 
 export default function ExperienceTab({ info, handleChange }) {
   const [experienceEdit, setExperienceEdit] = useState(-1);
@@ -109,13 +109,20 @@ export default function ExperienceTab({ info, handleChange }) {
 
           <label htmlFor="point">Description</label>
           <div className="description-input">
-            <input
+            {/* <input
               type="text"
               name="point"
               id="point"
               value={point}
               onChange={(e) => setPoint(e.target.value)}
-            />
+            /> */}
+            <textarea
+              name="point"
+              id="point"
+              value={point}
+              rows={3}
+              onChange={(e) => setPoint(e.target.value)}
+            ></textarea>
             <button
               type="button"
               onClick={() => {
@@ -139,19 +146,21 @@ export default function ExperienceTab({ info, handleChange }) {
               ))}
             </ul>
           </div>
-          <CancelButton onClick={() => {
-            setExperienceEdit(-1);
-            setExperience({
-              title: "",
-              company: "",
-              location: "",
-              start: "",
-              end: "",
-              description: [],
-            });
-            setPoints([]);
-            setPoint("");
-          }}/>
+          <CancelButton
+            onClick={() => {
+              setExperienceEdit(-1);
+              setExperience({
+                title: "",
+                company: "",
+                location: "",
+                start: "",
+                end: "",
+                description: [],
+              });
+              setPoints([]);
+              setPoint("");
+            }}
+          />
           <SaveButton
             onClick={() => {
               const newObj = cloneInfo();
@@ -161,6 +170,16 @@ export default function ExperienceTab({ info, handleChange }) {
               };
               handleChange(newObj);
               setExperienceEdit(-1);
+              setExperience({
+                title: "",
+                company: "",
+                location: "",
+                start: "",
+                end: "",
+                description: [],
+              });
+              setPoints([]);
+              setPoint("");
             }}
           />
         </>
@@ -187,9 +206,6 @@ export default function ExperienceTab({ info, handleChange }) {
               <p className="job-length">
                 {obj.start}-{obj.end}
               </p>
-              <button type="button" className="edit-btn">
-                Edit
-              </button>
               <button
                 type="button"
                 className="edit-btn"

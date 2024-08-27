@@ -1,3 +1,11 @@
+textarea {
+  font-size: 0.83rem;
+  font-family: inherit;
+  box-shadow: none;
+  resize: none;
+  padding: 0.15rem;
+}
+
 .exp-item-preview {
   grid-column: 1 / -1;
   padding: 1rem;
@@ -35,13 +43,31 @@
 @media (max-width: 600px) {
   .exp-item-preview {
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "school school" "location location" "degree degree" "length length" "delete edit";
+    grid-template-areas: "title title" "location location" "company company" "length length" "delete edit";
   }
 }
-
+.del-btn {
+  grid-area: delete;
+}
+.job-title {
+  grid-area: title;
+}
+.job-location {
+  grid-area: location;
+}
+.company {
+  grid-area: company;
+}
+.job-length {
+  grid-area: length;
+}
+.edit-btn {
+  grid-area: edit;
+}
 .experience {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
 }
 .experience label,
 .experience input {
@@ -50,6 +76,17 @@
 .experience label {
   margin-top: 0.75rem;
   margin-bottom: 0.2rem;
+}
+
+
+#job-start,
+#job-end,
+label[for="job-start"],
+label[for="job-end"] {
+  grid-column: span 1;
+}
+label[for="job-end"] {
+  grid-area: 8 / 2 / 9 / 3;
 }
 
 .description-input {
