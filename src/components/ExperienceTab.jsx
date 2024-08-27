@@ -109,13 +109,6 @@ export default function ExperienceTab({ info, handleChange }) {
 
           <label htmlFor="point">Description</label>
           <div className="description-input">
-            {/* <input
-              type="text"
-              name="point"
-              id="point"
-              value={point}
-              onChange={(e) => setPoint(e.target.value)}
-            /> */}
             <textarea
               name="point"
               id="point"

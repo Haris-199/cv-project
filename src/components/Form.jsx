@@ -3,8 +3,6 @@ import CancelButton from "./CancelButton";
 import SaveButton from "./SaveButton";
 import ExperienceTab from "./ExperienceTab";
 import "../styles/form.css";
-/* eslint-disable react/prop-types */
-
 
 export default function Form({ info, handleChange }) {
   const [educationEdit, setEducationEdit] = useState(-1);
