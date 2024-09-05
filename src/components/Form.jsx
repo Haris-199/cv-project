@@ -67,7 +67,7 @@ export default function Form({ info, handleChange }) {
           />
           <label htmlFor="address">Address</label>
           <input
-            type="tel"
+            type="text"
             name="address"
             id="address"
             value={info.personal.address}
